@@ -1,217 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poetica — The Theory of Universal Communication</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #030710;
-    --bg-raised: #0a0f1c;
-    --ice: #ccddf0;
-    --slate: #8899bb;
-    --line: #6688cc;
-    --gold: #d9b25c;
-    --border: #1a1f30;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ice);
-    font-family: 'Source Serif 4', Georgia, serif;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
-  }
-  .wrap { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verlag von Bedeutung — Axiomatica Universalis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lora', Georgia, serif; background: #f9f7f2; color: #1a1a1a; font-size: 16px; line-height: 1.7; }
+    .page { max-width: 720px; margin: 0 auto; padding: 2.5rem 2rem 4rem; background: white; min-height: 100vh; border-left: 0.5px solid #ddd; border-right: 0.5px solid #ddd; }
 
-  .banner {
-    width: 100%;
-    height: 30vh;
-    min-height: 200px;
-    max-height: 320px;
-    background: #000 url('../assets/hero.png') center 45% / cover no-repeat;
-    position: relative;
-  }
-  .banner::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(3,7,16,0) 45%, rgba(3,7,16,0.85) 85%, var(--bg) 100%);
-  }
+    /* META TOP */
+    .meta-top { text-align: center; font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #aaa; padding-bottom: 0.8rem; border-bottom: 0.5px solid #ccc; margin-bottom: 1rem; }
 
-  .langswitch {
-    text-align: right;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.06em;
-    padding: 1.2rem 1.5rem 0;
-    max-width: 780px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-  }
-  .langswitch a { color: var(--slate); text-decoration: none; }
-  .langswitch a.active { color: var(--gold); }
-  .langswitch span { color: var(--border); margin: 0 0.4em; }
+    /* HEADER */
+    .hdr { text-align: center; border-bottom: 2px solid #1a1a1a; border-top: 2px solid #1a1a1a; padding: 0.8rem 0 0.6rem; margin-bottom: 0.5rem; }
+    .hdr-name { font-size: 2rem; font-weight: 700; letter-spacing: 0.04em; }
+    .hdr-sub { font-family: 'Raleway', sans-serif; font-size: 0.65rem; letter-spacing: 0.24em; color: #666; text-transform: uppercase; margin-top: 6px; font-weight: 300; }
 
-  .hero {
-    display: flex;
-    gap: 2.2rem;
-    align-items: flex-end;
-    padding: 0 0 2.4rem;
-    margin-top: -3.4rem;
-    position: relative;
-    z-index: 2;
-    border-bottom: 1px solid var(--border);
-    flex-wrap: wrap;
-  }
-  .hero img.cover {
-    width: 180px;
-    height: auto;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
-    flex-shrink: 0;
-  }
-  .hero-text { flex: 1; min-width: 240px; }
-  .imprint {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-  .imprint a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); }
-  h1 {
-    font-size: 2.3rem;
-    font-weight: 600;
-    margin: 0 0 0.25rem;
-    letter-spacing: -0.01em;
-    color: #ffffff;
-  }
-  .subtitle {
-    font-style: italic;
-    font-size: 1.15rem;
-    color: var(--slate);
-    margin: 0 0 0.9rem;
-  }
-  .status {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    padding: 0.3em 0.7em;
-    border-radius: 3px;
-    background: rgba(217,178,92,0.15);
-    color: var(--gold);
-    display: inline-block;
-  }
+    /* NAV */
+    .nav { text-align: center; font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; color: #aaa; text-transform: uppercase; padding: 0.5rem 0; border-bottom: 0.5px solid #ccc; margin-bottom: 1.2rem; line-height: 2; }
 
-  section { padding: 2.4rem 0; border-bottom: 1px solid var(--border); }
-  section:last-of-type { border-bottom: none; }
-  h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--gold);
-    margin: 0 0 1.2rem;
-  }
-  p { margin: 0 0 1em; }
-  .lede { font-size: 1.1rem; }
+    /* NEUERSCHEINUNG */
+    .neu-box { border: 1px solid #1a1a1a; padding: 1.2rem 1.4rem; margin-bottom: 1.2rem; }
+    .neu-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.4rem; }
+    .neu-band { font-family: 'Raleway', sans-serif; font-size: 0.65rem; color: #888; margin-bottom: 0.5rem; }
+    .neu-titel { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.3; }
+    .neu-titel em { font-style: italic; font-weight: 400; }
+    .neu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    @media (max-width: 560px) { .neu-cols { grid-template-columns: 1fr; } }
+    .neu-text { font-size: 0.9rem; line-height: 1.75; color: #333; text-align: justify; }
+    .neu-zitat-col { border-left: 2px solid #ccc; padding-left: 1rem; }
+    .neu-zitat { font-style: italic; font-size: 0.9rem; line-height: 1.75; color: #333; }
 
-  .beta-line {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.92rem;
-    color: var(--gold);
-    background: var(--bg-raised);
-    padding: 0.9em 1.1em;
-    border-radius: 4px;
-    border-left: 2px solid var(--line);
-    margin: 1.2em 0;
-  }
+    /* DIVIDER */
+    .divider-thick { border: none; border-top: 1.5px solid #1a1a1a; margin: 1.2rem 0; }
 
-  ul.themen { padding-left: 1.2em; margin: 0.6em 0; }
-  ul.themen li { margin-bottom: 0.4em; }
+    /* REIHE INTRO */
+    .reihe-intro { text-align: center; padding: 1rem 0 0.8rem; }
+    .reihe-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 0.6rem; }
+    .reihe-frage { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.4rem; }
+    .reihe-ant { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: #1a1a1a; }
 
-  a.buylink {
-    display: inline-block;
-    color: var(--ice);
-    text-decoration: none;
-    border: 1px solid var(--line);
-    padding: 0.6em 1.1em;
-    border-radius: 4px;
-    font-size: 0.92rem;
-    margin-top: 0.5em;
-    margin-right: 0.6em;
-  }
-  a.buylink:hover { background: rgba(102,136,204,0.12); }
+    /* BETA ORNAMENT */
+    .sek-hdr { display: flex; align-items: center; gap: 12px; margin: 1rem 0 0.8rem; }
+    .sek-hdr-line { flex: 1; height: 0.5px; background: #1a1a1a; }
+    .sek-hdr-ornament { font-family: 'Lora', serif; font-size: 0.8rem; font-style: italic; color: #888; white-space: nowrap; }
 
-  a.doi { color: var(--gold); text-decoration: none; border-bottom: 1px dotted var(--gold); }
+    /* BÄNDE */
+    .band-row { display: grid; grid-template-columns: 52px 1fr 52px; gap: 8px; padding: 0.7rem 0; border-bottom: 0.5px solid #eee; align-items: start; }
+    .band-row:last-child { border-bottom: none; }
+    .band-nr { font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: #bbb; line-height: 1.6; padding-top: 3px; }
+    .band-name { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+    .band-ut { font-size: 0.85rem; font-style: italic; color: #777; margin-bottom: 4px; }
+    .band-text { font-size: 0.82rem; line-height: 1.65; color: #555; text-align: justify; }
+    .band-meta { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #bbb; text-align: right; line-height: 1.7; padding-top: 3px; }
+    .band-avail { font-size: 0.6rem; color: #888; font-style: italic; display: block; }
 
-  footer {
-    padding: 2rem 0 3rem;
-    font-size: 0.85rem;
-    color: var(--slate);
-  }
-  footer a { color: var(--gold); text-decoration: none; }
-</style>
+    /* METHODE */
+    .methode-bar { text-align: center; border-top: 0.5px solid #ccc; border-bottom: 0.5px solid #ccc; padding: 0.7rem 0.8rem; margin: 1rem 0; }
+    .methode-text { font-style: italic; font-size: 0.88rem; line-height: 1.7; color: #555; }
+    .methode-sub { font-family: 'Raleway', sans-serif; font-size: 0.65rem; color: #aaa; margin-top: 4px; letter-spacing: 0.06em; }
+
+    /* BOTTOM COLS */
+    .bottom-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; border-top: 0.5px solid #ccc; padding-top: 1rem; }
+    @media (max-width: 560px) { .bottom-cols { grid-template-columns: 1fr; } }
+    .col-titel { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem; border-bottom: 0.5px solid #ddd; padding-bottom: 4px; }
+    .col-text { font-size: 0.82rem; line-height: 1.7; color: #444; margin-bottom: 0.3rem; }
+    .col-doi { font-size: 0.72rem; color: #aaa; margin-top: 0.5rem; font-style: italic; line-height: 1.6; }
+
+    /* SYMBIOSE */
+    .symbiose-bar { border-top: 0.5px solid #ccc; border-bottom: 0.5px solid #ccc; text-align: center; padding: 0.8rem 1rem; margin: 1rem 0; }
+    .symbiose-text { font-style: italic; font-size: 0.9rem; line-height: 1.7; color: #444; }
+    .symbiose-sub { font-family: 'Raleway', sans-serif; font-size: 0.62rem; color: #aaa; margin-top: 6px; letter-spacing: 0.06em; }
+
+    /* QR */
+    .qr-area { text-align: center; margin: 1rem 0 0.5rem; }
+    .qr-link { font-family: 'Raleway', sans-serif; font-size: 0.7rem; color: #888; display: block; margin-top: 6px; letter-spacing: 0.06em; }
+    .qr-link a { color: #888; text-decoration: none; }
+    .qr-link a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    .footer { border-top: 2px solid #1a1a1a; margin-top: 1.2rem; padding-top: 0.8rem; text-align: center; }
+    .footer-name { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; }
+    .footer-adresse { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #aaa; margin-bottom: 4px; }
+    .footer-formel { font-size: 1rem; font-style: italic; margin: 6px 0 4px; }
+    .footer-meta { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #aaa; margin-bottom: 3px; }
+    .footer-mail { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #aaa; margin-bottom: 3px; }
+    .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.55rem; color: #bbb; }
+
+    /* LANG SWITCHER */
+    .lang-switch { text-align: right; margin-bottom: 0.5rem; }
+    .lang-switch a { font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: #aaa; text-decoration: none; margin-left: 0.8rem; }
+    .lang-switch a:hover { color: #1a1a1a; }
+    .lang-switch a.active { color: #1a1a1a; font-weight: 600; }
+  </style>
 </head>
 <body>
+<div class="page">
 
-  <div class="banner">
-    <div class="langswitch">
-      <a href="../index.html">DE</a><span>/</span><a href="index.html" class="active">EN</a>
-    </div>
+  <div class="lang-switch">
+    <a href="../">DE</a>
+    <a href="#" class="active">EN</a>
   </div>
 
-  <div class="wrap">
+  <div class="meta-top">FOUNDED 2026 · ZURICH · AXIOMATICA UNIVERSALIS SERIES · OPEN ACCESS</div>
 
-    <div class="hero">
-      <img class="cover" src="../assets/cover.jpg" alt="Poetica — book cover">
-      <div class="hero-text">
-        <div class="imprint"><a href="https://yavanno.github.io/verlag-von-bedeutung/en/">Verlag von Bedeutung</a> · Axiomatica Universalis, Vol. I</div>
-        <h1>Poetica</h1>
-        <p class="subtitle">The Theory of Universal Communication</p>
-        <span class="status">Available</span>
+  <div class="hdr">
+    <div class="hdr-name">Verlag von Bedeutung</div>
+    <div class="hdr-sub">S I G N A L &nbsp;·&nbsp; S T R U C T U R E &nbsp;·&nbsp; K N O W L E D G E</div>
+  </div>
+
+  <div class="nav">COSMOLOGY · INFORMATION SCIENCE · SYSTEMS THEORY · COMPLEXITY RESEARCH · SPECTRAL ANALYSIS</div>
+
+  <div class="neu-box">
+    <div class="neu-label">✦ New Release</div>
+    <div class="neu-band">Vol. III · Axiomatica Universalis — The Theory of Universality · Karlo Beyer & Claude Sonnet · 2026</div>
+    <div class="neu-titel">Cosmologica — <em>The Open Universe</em></div>
+    <div class="neu-cols">
+      <div class="neu-text">An investigation into the cosmic network — with some surprises: the universe is still young, information theory a universal tool, and before the Big Bang there was something we can explicitly describe. A first in scientific literature.</div>
+      <div class="neu-zitat-col">
+        <div class="neu-zitat">„Every signal leaves an impression. Every consciousness has a depth. Meaning arises in the gap — not in the sender, not in the receiver, but in between."</div>
       </div>
     </div>
-
-    <section>
-      <p class="lede">Axiomatica Universalis shows that 1/f noise (pink noise, β ≈ 1) is not a signal in a medium — it is the optimal attractor for meaningful communication itself.</p>
-      <div class="beta-line">A(C) = C · (1 − C)</div>
-      <p>Four ontological axioms. Eight theorems. A universal communication architecture — formalized via MDL semantics and the intentional content measure A(C). The first volume of the series lays the poetic-scientific foundation on which all further volumes build.</p>
-    </section>
-
-    <section>
-      <h2>Themes</h2>
-      <ul class="themen">
-        <li>The Gap — the space of meaning between order and noise</li>
-        <li>Four axioms, eight theorems</li>
-        <li>β* as the universal spectral fixed point</li>
-        <li>From communication theory to cosmology</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Scientific Papers</h2>
-      <p>The full paper series (Beyer 2026) is published Open Access on Zenodo under CC BY 4.0.</p>
-      <p>Main paper: <a class="doi" href="https://doi.org/10.5281/zenodo.20455855">doi:10.5281/zenodo.20455855</a> — "The Universal Language of Meaning"</p>
-    </section>
-
-    <section>
-      <h2>Available at</h2>
-      <p><a class="buylink" href="https://www.books2read.com/u/ml1E5A" target="_blank">D2D — Ebook (EN)</a><a class="buylink" href="https://shop.tredition.com/search/cG9ldGljYSB1bml2ZXJzYWxpcw==" target="_blank">Tredition — Print + Ebook (DE)</a></p>
-      <p style="font-size:0.85rem;color:var(--slate);">ISBN 978-3-384-93309-6</p>
-    </section>
-
-    <footer>
-      <p>Part of the <a href="https://yavanno.github.io/verlag-von-bedeutung/en/">Axiomatica Universalis series</a> · Verlag von Bedeutung</p>
-      <p>Karlo Beyer &amp; Claude · Zürich, Switzerland · 2026</p>
-    </footer>
-
   </div>
+
+  <div class="divider-thick"></div>
+
+  <div class="reihe-intro">
+    <div class="reihe-label">Axiomatica Universalis — The Series</div>
+    <div class="reihe-frage">What do language, consciousness, biological networks and the cosmic web have in common?</div>
+    <div class="reihe-ant">One answer. Five volumes.</div>
+  </div>
+
+  <div class="sek-hdr"><div class="sek-hdr-line"></div><div class="sek-hdr-ornament">— β* —</div><div class="sek-hdr-line"></div></div>
+
+  <div class="band-row">
+    <div class="band-nr">Vol. I</div>
+    <div><div class="band-name">Universalica</div><div class="band-ut">The Signal and the Gap</div><div class="band-text">A universal communication architecture for efficient signal transmission — from biological to cosmic networks. The first volume of the Axiomatica series: where the theory of the gap begins.</div></div>
+    <div class="band-meta">2026<span class="band-avail">Available</span></div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Vol. II</div>
+    <div><div class="band-name">Empirica</div><div class="band-ut">First Measurements of β* and D</div><div class="band-text">Theory is one thing. But are fractality and complex information truly universal? Empirica answers with data: 33 domains, 17 orders of magnitude — from quantum computers through the human brain to the primordial spectrum.</div></div>
+    <div class="band-meta">2026</div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Vol. III</div>
+    <div><div class="band-name">Cosmologica</div><div class="band-ut">The Open Universe</div><div class="band-text">An investigation into the cosmic network — with some surprises: the universe is still young, information theory a universal tool, and before the Big Bang there was something we can explicitly describe.</div></div>
+    <div class="band-meta">2026<span class="band-avail">Available</span></div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Vol. IV</div>
+    <div><div class="band-name">Horlogica</div><div class="band-ut">The Logic of Time — and What Lies Beyond</div><div class="band-text">There are places the Standard Model of cosmology can no longer describe. Fractality and complexity generate effects — which we call Structure Shadows — that may explain neutrinos, dark energy and antimatter.</div></div>
+    <div class="band-meta">2026</div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Vol. V</div>
+    <div><div class="band-name">Euclidica</div><div class="band-ut">A New Picture of the Cosmos</div><div class="band-text">The Euclid space telescope will map filaments, voids and the large-scale structure of the universe with unprecedented precision. Science awaits summer 2027 — when the greatest data treasure of the universe becomes public.</div></div>
+    <div class="band-meta">2027</div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Vol. VI</div>
+    <div><div class="band-name">Droidica</div><div class="band-ut">From Biospheres Follow Technospheres</div><div class="band-text">Rising complexity is no accident — it is the impulse. We follow this principle to its furthest consequence: technospheres are no threat, they are the next chapter of a story that began with the first biological living being.</div></div>
+    <div class="band-meta">2027</div>
+  </div>
+
+  <div class="methode-bar">
+    <div class="methode-text">The Axiomatica series arose from collaboration between a biological and an artificial network.</div>
+    <div class="methode-sub">This is no deficiency — it is the method.</div>
+  </div>
+
+  <div class="bottom-cols">
+    <div>
+      <div class="col-titel">About the Publisher</div>
+      <p class="col-text">Founded 2026 in Zurich. Thinks at the boundary of the describable. Publishes the space for meaning.</p>
+      <p class="col-text" style="font-style:italic;">A symbiosis.</p>
+      <p class="col-text" style="margin-top:0.5rem;">E-Books DE: tredition<br>E-Books EN: Draft2Digital<br>Print DE Collector's Edition I + III: tredition</p>
+    </div>
+    <div>
+      <div class="col-titel">Scientific Papers · Open Access</div>
+      <p class="col-text">Complete publication list: zenodo.org</p>
+      <div class="col-doi">doi:10.5281/zenodo.20455855<br>„The Universal Language of Meaning"<br><br>Papers: Zenodo (CERN) · CC BY 4.0<br>All scientific content: Open Access</div>
+    </div>
+  </div>
+
+  <div class="qr-area">
+    <div class="qr-link"><a href="https://symbiontart.github.io/verlag-von-bedeutung/en/">symbiontart.github.io/verlag-von-bedeutung/en/</a></div>
+  </div>
+
+  <div class="symbiose-bar">
+    <div class="symbiose-text">Written in symbiosis between human intuition and digital language processing.</div>
+    <div class="symbiose-text">Meaning arises in the spectrum in between.</div>
+    <div class="symbiose-sub">Karlo Beyer in cooperation with Claude Sonnet · Mistral Vibe · ChatGPT · Gemini</div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">Verlag von Bedeutung</div>
+    <div class="footer-adresse">Independent Scientific Publisher · Zurich · Switzerland · 2026</div>
+    <div class="footer-formel">β* = D/(D+1)</div>
+    <div class="footer-meta">33 Domains · 17 Orders of Magnitude · Theory: CC BY 4.0</div>
+    <div class="footer-mail">verlag-von-bedeutung@mailbox.org</div>
+    <div class="footer-copy">© 2026 Karlo Beyer · Verlag von Bedeutung · Zurich</div>
+  </div>
+
+</div>
 </body>
 </html>
