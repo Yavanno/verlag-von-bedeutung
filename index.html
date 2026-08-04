@@ -1,395 +1,182 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-  <meta name="description" content="Verlag von Bedeutung — Unabhängiger Wissenschaftsverlag, Zürich. Axiomatica Universalis Series: Poetica Universalis, Empirica Universalis und weitere Bände zur universellen Signaltheorie β* = D/(D+1).">
-  <meta name="keywords" content="Axiomatica Universalis, Verlag von Bedeutung, Karlo Beyer, 1/f Signal, Beta Stern, Informationstheorie, Kosmologie, Open Access, Zenodo, Wissenschaftsverlag Zürich">
-  <meta name="author" content="Karlo Beyer">
-  <meta property="og:title" content="Verlag von Bedeutung — Axiomatica Universalis Series">
-  <meta property="og:description" content="Wissenschaftliche Publikationen zur universellen Signaltheorie. β* = D/(D+1) — bestätigt in 33 Domains über 17 Grössenordnungen.">
-  <meta property="og:type" content="website">
-  <meta name="robots" content="index, follow">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Verlag von Bedeutung — Wissenschaftliche Publikationen</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;500&display=swap');
-
-:root{
-  --ink:#1a1814;--ink2:#3a342e;--ink3:#6a5e52;
-  --paper:#faf8f4;--paper2:#f4f0ea;--paper3:#ede8e0;
-  --gold:#8a6a2a;--gold2:#b08030;--gold3:#d4a040;
-  --red:#8a2020;--blue:#1a3060;
-  --rule:rgba(26,24,20,0.12);
-  --serif:'Playfair Display',Georgia,serif;
-  --body:'Source Serif 4',Georgia,serif;
-  --sans:'Source Sans 3',system-ui,sans-serif;
-  --col:680px;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.75;}
-
-/* HEADER — Zeitungs-Stil */
-.masthead{background:var(--paper);border-bottom:3px double var(--ink);padding:0;}
-.masthead-top{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 3rem;border-bottom:1px solid var(--rule);font-family:var(--sans);font-size:11px;color:var(--ink3);letter-spacing:0.05em;}
-.masthead-date{font-style:italic;}
-.masthead-main{text-align:center;padding:1.8rem 3rem 1.4rem;}
-.masthead-rule-top{height:1px;background:var(--ink);margin-bottom:8px;}
-.pub-name{font-family:var(--serif);font-size:clamp(36px,6vw,64px);font-weight:600;letter-spacing:-0.02em;color:var(--ink);line-height:1;margin-bottom:0.3rem;}
-.pub-sub{font-family:var(--sans);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.8rem;}
-.masthead-rule-bot{height:1px;background:var(--ink);}
-
-/* NAV — Zeitungs-Rubriken */
-nav{background:var(--paper2);border-bottom:2px solid var(--ink);padding:0;}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;gap:0;}
-.nav-inner a{font-family:var(--sans);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:0.65rem 1.4rem;border-right:1px solid var(--rule);display:block;transition:background 0.15s;}
-.nav-inner a:first-child{border-left:1px solid var(--rule);}
-.nav-inner a:hover{background:var(--paper3);}
-
-/* HAUPTINHALT */
-.container{max-width:1100px;margin:0 auto;padding:3rem 2rem;}
-
-/* AUFMACHER — grosse Ankündigung */
-.lead-article{border-bottom:1px solid var(--rule);padding-bottom:2.5rem;margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
-.lead-kicker{font-family:var(--sans);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:0.4rem;font-weight:500;}
-.lead-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,38px);font-weight:600;line-height:1.15;margin-bottom:0.6rem;color:var(--ink);}
-.lead-title em{font-style:italic;}
-.lead-deck{font-size:16px;color:var(--ink2);line-height:1.65;margin-bottom:1rem;font-weight:300;}
-.lead-byline{font-family:var(--sans);font-size:11px;color:var(--ink3);letter-spacing:0.05em;border-top:1px solid var(--rule);padding-top:0.5rem;}
-.lead-byline strong{color:var(--gold);}
-
-/* Buch-Cover Placeholder */
-.book-cover{background:var(--paper3);border:1px solid var(--rule);padding:2rem;text-align:center;position:relative;}
-.book-cover-inner{background:var(--ink);padding:2rem 1.5rem;color:var(--paper);margin-bottom:1rem;}
-.book-cover-title{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:0.4rem;color:var(--gold3);}
-.book-cover-subtitle{font-family:var(--sans);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:1rem;}
-.book-cover-author{font-family:var(--sans);font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.08em;text-transform:uppercase;}
-.book-cover-badge{font-family:var(--sans);font-size:10px;background:var(--gold);color:white;padding:3px 8px;letter-spacing:0.08em;}
-.btn{display:inline-block;font-family:var(--sans);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;padding:0.5rem 1.2rem;text-decoration:none;margin-top:0.8rem;transition:all 0.15s;}
-.btn-primary{background:var(--ink);color:var(--paper);}
-.btn-primary:hover{background:var(--ink2);}
-.btn-secondary{border:1px solid var(--ink);color:var(--ink);}
-.btn-secondary:hover{background:var(--paper3);}
-
-/* DREI-SPALTEN REIHE */
-.series-header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:0.3rem;margin-bottom:1.5rem;}
-.series-title{font-family:var(--serif);font-size:22px;font-weight:600;}
-.series-label{font-family:var(--sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink3);}
-
-.books-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem 2rem;margin-bottom:3rem;}
-.book-card{border-top:3px solid var(--ink);padding-top:1rem;}
-.book-card.gold{border-top-color:var(--gold);}
-.book-card.wip{border-top-color:var(--ink3);opacity:0.7;}
-.bc-label{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.3rem;}
-.bc-title{font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.2;margin-bottom:0.3rem;color:var(--ink);}
-.bc-sub{font-size:13px;color:var(--ink3);margin-bottom:0.6rem;font-style:italic;}
-.bc-desc{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:0.8rem;}
-.bc-status{font-family:var(--sans);font-size:10px;letter-spacing:0.08em;padding:2px 6px;display:inline-block;}
-.st-live{background:var(--ink);color:var(--paper);}
-.st-wip{border:1px solid var(--ink3);color:var(--ink3);}
-.st-plan{border:1px solid var(--rule);color:var(--ink3);}
-.bc-isbn{font-family:var(--sans);font-size:10px;color:var(--ink3);margin-top:0.4rem;}
-.bc-link{font-family:var(--sans);font-size:11px;color:var(--blue);text-decoration:none;display:block;margin-top:0.3rem;}
-.bc-link:hover{text-decoration:underline;}
-
-/* TRENNLINIE */
-.divider{border:none;border-top:1px solid var(--rule);margin:2.5rem 0;}
-.divider-thick{border-top:2px solid var(--ink);margin:2.5rem 0;}
-
-/* ZWEI-SPALTEN */
-.two-col{display:grid;grid-template-columns:2fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-.two-col-rev{display:grid;grid-template-columns:1fr 2fr;gap:3rem;margin-bottom:2.5rem;}
-
-/* ABOUT */
-.about-block{background:var(--paper2);border:1px solid var(--rule);padding:2rem;}
-.about-title{font-family:var(--serif);font-size:18px;font-weight:600;margin-bottom:0.8rem;border-bottom:1px solid var(--rule);padding-bottom:0.5rem;}
-.about-text{font-size:14px;color:var(--ink2);line-height:1.75;}
-
-/* PAPERS */
-.papers-list{list-style:none;}
-.papers-list li{border-bottom:1px solid var(--rule);padding:0.7rem 0;display:flex;gap:1rem;align-items:baseline;}
-.paper-id{font-family:var(--sans);font-size:10px;color:var(--gold);letter-spacing:0.08em;width:60px;flex-shrink:0;font-weight:500;}
-.paper-title{font-size:14px;color:var(--ink2);flex:1;}
-.paper-doi{font-family:var(--sans);font-size:10px;color:var(--blue);text-decoration:none;}
-.paper-doi:hover{text-decoration:underline;}
-
-/* ZENODO-BLOCK */
-.zenodo-block{border-left:3px solid var(--gold);padding:1rem 1.5rem;background:rgba(138,106,42,0.04);}
-.zenodo-title{font-family:var(--sans);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;}
-.zenodo-text{font-size:13px;color:var(--ink2);line-height:1.65;}
-
-/* FOOTER */
-footer{background:var(--ink);color:var(--paper);padding:2.5rem 3rem;margin-top:3rem;}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;}
-.footer-col-title{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold3);margin-bottom:0.6rem;padding-bottom:0.4rem;border-bottom:1px solid rgba(255,255,255,0.1);}
-.footer-text{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.8;}
-.footer-text a{color:rgba(255,255,255,0.7);text-decoration:none;}
-.footer-copy{text-align:center;padding-top:1.5rem;margin-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);font-family:var(--sans);font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.05em;}
-
-/* PULL QUOTE */
-.pull-quote{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:1.2rem 0;margin:1.5rem 0;text-align:center;}
-.pq-text{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);line-height:1.4;}
-.pq-source{font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-top:0.5rem;}
-</style>
+  <title>Verlag von Bedeutung — Axiomatica Universalis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Lora', Georgia, serif; background: #f9f7f2; color: #1a1a1a; font-size: 16px; line-height: 1.7; }
+    .page { max-width: 720px; margin: 0 auto; padding: 2.5rem 2rem 4rem; background: white; min-height: 100vh; border-left: 0.5px solid #ddd; border-right: 0.5px solid #ddd; }
+    .lang-switch { text-align: right; margin-bottom: 0.8rem; }
+    .lang-switch a { font-family: 'Raleway', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #888; text-decoration: none; margin-left: 1rem; border: 0.5px solid #ccc; padding: 0.3em 0.7em; }
+    .lang-switch a:hover { color: #1a1a1a; border-color: #1a1a1a; }
+    .lang-switch a.active { color: #1a1a1a; border-color: #1a1a1a; font-weight: 700; }
+    .meta-top { text-align: center; font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: #aaa; padding-bottom: 0.8rem; border-bottom: 0.5px solid #ccc; margin-bottom: 1rem; }
+    .hdr { text-align: center; border-bottom: 2px solid #1a1a1a; border-top: 2px solid #1a1a1a; padding: 0.8rem 0 0.6rem; margin-bottom: 0.5rem; }
+    .hdr-name { font-size: 2rem; font-weight: 700; letter-spacing: 0.04em; }
+    .hdr-sub { font-family: 'Raleway', sans-serif; font-size: 0.65rem; letter-spacing: 0.24em; color: #666; text-transform: uppercase; margin-top: 6px; font-weight: 300; }
+    .nav { text-align: center; font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.14em; color: #aaa; text-transform: uppercase; padding: 0.5rem 0; border-bottom: 0.5px solid #ccc; margin-bottom: 1.2rem; line-height: 2; }
+    .neu-box { border: 1px solid #1a1a1a; padding: 1.2rem 1.4rem; margin-bottom: 1.2rem; }
+    .neu-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; margin-bottom: 0.4rem; }
+    .neu-band { font-family: 'Raleway', sans-serif; font-size: 0.65rem; color: #888; margin-bottom: 0.5rem; }
+    .neu-titel { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; line-height: 1.3; }
+    .neu-titel em { font-style: italic; font-weight: 400; }
+    .neu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    @media (max-width: 560px) { .neu-cols { grid-template-columns: 1fr; } }
+    .neu-text { font-size: 0.9rem; line-height: 1.75; color: #333; text-align: justify; }
+    .neu-zitat-col { border-left: 2px solid #ccc; padding-left: 1rem; }
+    .neu-zitat { font-style: italic; font-size: 0.9rem; line-height: 1.75; color: #333; }
+    .divider-thick { border: none; border-top: 1.5px solid #1a1a1a; margin: 1.2rem 0; }
+    .reihe-intro { text-align: center; padding: 1rem 0 0.8rem; }
+    .reihe-label { font-family: 'Raleway', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 0.6rem; }
+    .reihe-frage { font-size: 1.15rem; font-weight: 700; line-height: 1.5; margin-bottom: 0.4rem; }
+    .reihe-ant { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: #1a1a1a; }
+    .sek-hdr { display: flex; align-items: center; gap: 12px; margin: 1rem 0 0.8rem; }
+    .sek-hdr-line { flex: 1; height: 0.5px; background: #1a1a1a; }
+    .sek-hdr-ornament { font-family: 'Lora', serif; font-size: 0.8rem; font-style: italic; color: #888; white-space: nowrap; }
+    .band-row { display: grid; grid-template-columns: 52px 1fr 52px; gap: 8px; padding: 0.7rem 0; border-bottom: 0.5px solid #eee; align-items: start; }
+    .band-row:last-child { border-bottom: none; }
+    .band-nr { font-family: 'Raleway', sans-serif; font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: #bbb; line-height: 1.6; padding-top: 3px; }
+    .band-name { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+    .band-ut { font-size: 0.85rem; font-style: italic; color: #777; margin-bottom: 4px; }
+    .band-text { font-size: 0.82rem; line-height: 1.65; color: #555; text-align: justify; }
+    .band-meta { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #bbb; text-align: right; line-height: 1.7; padding-top: 3px; }
+    .band-avail { font-size: 0.6rem; color: #888; font-style: italic; display: block; }
+    .methode-bar { text-align: center; border-top: 0.5px solid #ccc; border-bottom: 0.5px solid #ccc; padding: 0.7rem 0.8rem; margin: 1rem 0; }
+    .methode-text { font-style: italic; font-size: 0.88rem; line-height: 1.7; color: #555; }
+    .methode-sub { font-family: 'Raleway', sans-serif; font-size: 0.65rem; color: #aaa; margin-top: 4px; letter-spacing: 0.06em; }
+    .bottom-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; border-top: 0.5px solid #ccc; padding-top: 1rem; }
+    @media (max-width: 560px) { .bottom-cols { grid-template-columns: 1fr; } }
+    .col-titel { font-family: 'Raleway', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.5rem; border-bottom: 0.5px solid #ddd; padding-bottom: 4px; }
+    .col-text { font-size: 0.82rem; line-height: 1.7; color: #444; margin-bottom: 0.3rem; }
+    .col-doi { font-size: 0.72rem; color: #aaa; margin-top: 0.5rem; font-style: italic; line-height: 1.6; }
+    .symbiose-bar { border-top: 0.5px solid #ccc; border-bottom: 0.5px solid #ccc; text-align: center; padding: 0.8rem 1rem; margin: 1rem 0; }
+    .symbiose-text { font-style: italic; font-size: 0.9rem; line-height: 1.7; color: #444; }
+    .symbiose-sub { font-family: 'Raleway', sans-serif; font-size: 0.62rem; color: #aaa; margin-top: 6px; letter-spacing: 0.06em; }
+    .qr-area { text-align: center; margin: 1rem 0 0.5rem; }
+    .qr-link { font-family: 'Raleway', sans-serif; font-size: 0.7rem; color: #888; display: block; margin-top: 6px; letter-spacing: 0.06em; }
+    .qr-link a { color: #888; text-decoration: none; }
+    .qr-link a:hover { text-decoration: underline; }
+    .footer { border-top: 2px solid #1a1a1a; margin-top: 1.2rem; padding-top: 0.8rem; text-align: center; }
+    .footer-name { font-family: 'Raleway', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; }
+    .footer-adresse { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #aaa; margin-bottom: 4px; }
+    .footer-formel { font-size: 1rem; font-style: italic; margin: 6px 0 4px; }
+    .footer-meta { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #aaa; margin-bottom: 3px; }
+    .footer-mail { font-family: 'Raleway', sans-serif; font-size: 0.6rem; color: #aaa; margin-bottom: 3px; }
+    .footer-copy { font-family: 'Raleway', sans-serif; font-size: 0.55rem; color: #bbb; }
+  </style>
 </head>
 <body>
+<div class="page">
 
-<!-- MASTHEAD -->
-<header class="masthead">
-  <div class="masthead-top">
-    <span>Zürich · Gegründet 2026</span>
-    <span class="masthead-date">Wissenschaftliche Publikationen · Open Access</span>
-    <span>Axiomatica Universalis Series</span>
+  <div class="lang-switch">
+    <a href="#" class="active">DE</a>
+    <a href="en/">EN</a>
   </div>
-  <div class="masthead-main">
-    <div class="masthead-rule-top"></div>
-    <div class="pub-name">Verlag von Bedeutung</div>
-    <div class="pub-sub">Wissenschaft · Theorie · Bedeutung</div>
-    <div class="masthead-rule-bot"></div>
+
+  <div class="meta-top">GEGRÜNDET 2026 · ZÜRICH · AXIOMATICA UNIVERSALIS SERIES · OPEN ACCESS</div>
+
+  <div class="hdr">
+    <div class="hdr-name">Verlag von Bedeutung</div>
+    <div class="hdr-sub">S I G N A L &nbsp;·&nbsp; S T R U K T U R &nbsp;·&nbsp; E R K E N N T N I S</div>
   </div>
-</header>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#reihe">Die Reihe</a>
-    <a href="#aktuell">Aktuell</a>
-    <a href="#papers">Papers</a>
-    <a href="#open-access">Open Access</a>
-    <a href="#ueber">Über den Verlag</a>
-    <a href="#kontakt">Kontakt</a>
+  <div class="nav">KOSMOLOGIE · INFORMATIONSWISSENSCHAFTEN · SYSTEMTHEORIE · KOMPLEXITÄTSFORSCHUNG · SPEKTRALANALYSE</div>
+
+  <div class="neu-box">
+    <div class="neu-label">✦ Neuerscheinung</div>
+    <div class="neu-band">Band III · Axiomatica Universalis — Die Theorie der Universalität · Karlo Beyer & Claude Sonnet · 2026</div>
+    <div class="neu-titel">Cosmologica — <em>Das offene Universum</em></div>
+    <div class="neu-cols">
+      <div class="neu-text">Dem Rätsel des kosmischen Netzwerks auf den Grund gegangen — mit einigen Überraschungen: Der Kosmos ist noch jung, die Informationstheorie ein universelles Werkzeug, und vor dem Urknall gab es etwas, das wir explizit beschreiben können. Ein Novum in der Wissenschaftsliteratur.</div>
+      <div class="neu-zitat-col">
+        <div class="neu-zitat">„Jedes Signal hinterlässt einen Eindruck. Jedes Bewusstsein hat eine Tiefe. Bedeutung entsteht in der Lücke — nicht im Sender, nicht im Empfänger, sondern dazwischen."</div>
+      </div>
+    </div>
   </div>
-</nav>
 
-<div class="container">
+  <div class="divider-thick"></div>
 
-  <!-- AUFMACHER -->
-  <div class="lead-article" id="aktuell">
+  <div class="reihe-intro">
+    <div class="reihe-label">Axiomatica Universalis — Die Reihe</div>
+    <div class="reihe-frage">Was haben Sprache, Bewusstsein, biologische Netzwerke und das kosmische Netz gemeinsam?</div>
+    <div class="reihe-ant">Eine Antwort. Fünf Bände.</div>
+  </div>
+
+  <div class="sek-hdr"><div class="sek-hdr-line"></div><div class="sek-hdr-ornament">— β* —</div><div class="sek-hdr-line"></div></div>
+
+  <div class="band-row">
+    <div class="band-nr">Band I</div>
+    <div><div class="band-name">Universalica</div><div class="band-ut">Das Signal und die Lücke</div><div class="band-text">Eine universelle Kommunikationsarchitektur für effiziente Signalübertragung — von biologischen bis zu kosmischen Netzwerken. Der erste Band der Axiomatica-Reihe: wo die Theorie der Lücke beginnt.</div></div>
+    <div class="band-meta">2026<span class="band-avail">Lieferbar</span></div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Band II</div>
+    <div><div class="band-name">Empirica</div><div class="band-ut">Erste Messungen von β* und D</div><div class="band-text">Theorie ist das eine. Aber sind Fraktalität und komplexe Informationen wirklich universell? Empirica antwortet mit Daten: 33 Domänen, 17 Grössenordnungen — von Quantencomputern über das menschliche Gehirn bis zum primordialen Spektrum.</div></div>
+    <div class="band-meta">2026</div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Band III</div>
+    <div><div class="band-name">Cosmologica</div><div class="band-ut">Das offene Universum</div><div class="band-text">Dem Rätsel des kosmischen Netzwerks auf den Grund gegangen — mit einigen Überraschungen: Der Kosmos ist noch jung, die Informationstheorie ein universelles Werkzeug, und vor dem Urknall gab es etwas, das wir explizit beschreiben können.</div></div>
+    <div class="band-meta">2026<span class="band-avail">Lieferbar</span></div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Band IV</div>
+    <div><div class="band-name">Horlogica</div><div class="band-ut">Die Logik der Zeit — und was jenseits liegt</div><div class="band-text">Es gibt Orte, die das Standardmodell der Kosmologie nicht mehr beschreiben kann. Fraktalität und Komplexität erzeugen aber Effekte — von uns Strukturschatten genannt — die Neutrinos, Dunkle Energie und Antimaterie erklären könnten.</div></div>
+    <div class="band-meta">2026</div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Band V</div>
+    <div><div class="band-name">Euclidica</div><div class="band-ut">Ein neues Bild des Kosmos</div><div class="band-text">Das Euclid-Weltraumteleskop der ESA wird Filamente, Voids und die Grossraumstruktur in unerreichter Präzision vermessen. Die Wissenschaft wartet auf Sommer 2027 — wenn der grösste Datenschatz des Universums öffentlich wird.</div></div>
+    <div class="band-meta">2027</div>
+  </div>
+  <div class="band-row">
+    <div class="band-nr">Band VI</div>
+    <div><div class="band-name">Droidica</div><div class="band-ut">Aus Biosphären folgen Technosphären</div><div class="band-text">Steigende Komplexität ist kein Zufall — sie ist der Impuls. Wir folgen diesem Prinzip bis an seine äusserste Konsequenz: Technosphären sind keine Bedrohung, sie sind das nächste Kapitel einer Geschichte die mit dem ersten biologischen Lebewesen begann.</div></div>
+    <div class="band-meta">2027</div>
+  </div>
+
+  <div class="methode-bar">
+    <div class="methode-text">Die Axiomatica-Reihe entstand in der Zusammenarbeit zwischen einem biologischen und einem künstlichen Netzwerk.</div>
+    <div class="methode-sub">Das ist kein Mangel — es ist die Methode.</div>
+  </div>
+
+  <div class="bottom-cols">
     <div>
-      <div class="lead-kicker">Neuerscheinung · Axiomatica Universalis Series</div>
-      <div class="lead-title">Poetica Universalis — <em>Das Signal und die Lücke</em></div>
-      <div class="lead-deck">
-        Das erste Buch der Axiomatica Universalis Serie. Ein poetisch-wissenschaftliches Werk über Bedeutung, Lücke und das universelle Spektrum — als Grundlage für die formale Theorie.
-        180 Seiten. Fünf Teile. Tredition Verlag, Hamburg.
-      </div>
-      <div class="lead-deck" style="font-size:14px;">
-        Begleitend zum Hauptpaper Beyer 2026f (Zenodo), das die formale Theorie vollständig ausarbeitet:
-        vier ontologische Axiome, aus denen β* = D/(D+1) als universeller spektraler Fixpunkt folgt.
-      </div>
-      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1rem;">
-        <a href="https://shop.tredition.com/search/cG9ldGljYSB1bml2ZXJzYWxpcw==" class="btn btn-primary" target="_blank">Bei Tredition kaufen</a>
-        <a href="https://doi.org/10.5281/zenodo.20455855" class="btn btn-secondary" target="_blank">Paper (Open Access)</a>
-      </div>
-      <div class="lead-byline" style="margin-top:1rem;">
-        <strong>Karlo Beyer</strong> · Zürich, 2026 · ISBN 978-3-384-93309-6
-      </div>
-    </div>
-    <div>
-      <div class="book-cover">
-        <img src="data:image/jpeg;base64,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" style="width:100%;display:block;" alt="Poetica Universalis Cover">
-        <div style="display:flex;justify-content:space-between;align-items:center;padding:0.5rem 0;">
-          <span class="book-cover-badge">Lieferbar</span>
-          <span style="font-family:'Source Sans 3',sans-serif;font-size:11px;color:var(--ink3);">978-3-384-93309-6</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pull-quote">
-    <div class="pq-text">„Bedeutung entsteht in der Lücke — im offenen Raum, in dem ein Empfänger ein Signal teilweise, aber nie vollständig komprimieren kann."</div>
-    <div class="pq-source">— Axiomatica Universalis, These §1.2</div>
-  </div>
-
-  <!-- DIE REIHE -->
-  <div id="reihe">
-    <div class="series-header">
-      <div class="series-title">Axiomatica Universalis — Die Reihe</div>
-      <div class="series-label">Karlo Beyer · Verlag von Bedeutung · 2026–</div>
-    </div>
-
-    <div class="books-grid">
-      <!-- Band I -->
-      <div class="book-card gold">
-        <div class="bc-label">Band I · Erschienen 2026</div>
-        <div class="bc-title">Poetica Universalis</div>
-        <div class="bc-sub">Das Signal und die Lücke</div>
-        <div class="bc-desc">Das poetisch-wissenschaftliche Fundament. Fünf Teile: Die Lücke, die Welt in der Lücke, die Lücke im Universum, die Lücke im Menschen, die Theorie. 180 Seiten.</div>
-        <span class="bc-status st-live">Lieferbar</span>
-        <div class="bc-isbn">ISBN 978-3-384-93309-6 · Softcover DE</div>
-        <a href="https://yavanno.github.io/poetica/" class="bc-link" target="_blank">→ Zur Buchseite</a>
-        <a href="https://shop.tredition.com/search/cG9ldGljYSB1bml2ZXJzYWxpcw==" class="bc-link" target="_blank">→ Kaufen bei Tredition</a>
-        <a href="https://doi.org/10.5281/zenodo.20455855" class="bc-link" target="_blank">→ Paper (Open Access)</a>
-      </div>
-
-      <!-- Band II -->
-      <div class="book-card">
-        <div class="bc-label">Band II · In Vorbereitung</div>
-        <div class="bc-title">Empirica</div>
-        <div class="bc-sub">Empirische Messungen von Beta und D</div>
-        <div class="bc-desc">Die empirische Basis. 19 Kapitel über alle bestätigten Domains — von Quantencomputern über das menschliche EEG bis zum primordialen Spektrum des Universums.</div>
-        <span class="bc-status st-wip">November 2026</span>
-        <div class="bc-isbn">November 2026</div>
-      </div>
-
-      <!-- Band III -->
-      <div class="book-card gold">
-        <div class="bc-label">Band III · Lieferbar</div>
-        <div class="bc-title">Cosmologica</div>
-        <div class="bc-sub">Das offene Universum</div>
-        <div class="bc-desc">Das Buch das geschrieben wurde bevor wir wussten ob wir recht haben. Theorie, kosmologischer Test (Euclid DR1), offene mathematische Fragen — vom kosmischen Netz bis hinter die Planck-Länge.</div>
-        <span class="bc-status st-live">Lieferbar</span>
-        <a href="https://yavanno.github.io/cosmologica/" class="bc-link" target="_blank">→ Zur Buchseite</a>
-      </div>
-      <!-- Band IV -->
-      <div class="book-card wip">
-        <div class="bc-label">Band IV · In Vorbereitung</div>
-        <div class="bc-title">Horlogica</div>
-        <div class="bc-sub">Zeit, Raum und Bewusstsein</div>
-        <div class="bc-desc">Was Zeit ist, wenn sie nicht linear vergeht. Die Lücke im Bewusstsein, im Schlaf, in der Wahrnehmung von Dauer — und was das über die Struktur der Zeit selbst verrät.</div>
-        <span class="bc-status st-wip">November 2026</span>
-      </div>
-
-      <!-- Band V -->
-      <div class="book-card wip">
-        <div class="bc-label">Band V · Geplant</div>
-        <div class="bc-title">Euclidica</div>
-        <div class="bc-sub">Neue Physik &amp; bestätigte Erkenntnisse</div>
-        <div class="bc-desc">Euclid DR1, das primordiale Leistungsspektrum, β* auf kosmologischer Skala. Laniakea als Kontext. Das Buch das den kosmologischen Test der Theorie dokumentiert.</div>
-        <span class="bc-status st-plan">Juli 2027 · nach Euclid DR1</span>
-      </div>
-    </div>
-
-    <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px dashed var(--rule);">
-      <div class="series-label" style="margin-bottom:1rem;">Ausserhalb der Reihe</div>
-      <div class="books-grid" style="margin-bottom:0;">
-        <div class="book-card wip">
-          <div class="bc-label">Eigenständiges Buch · Geplant</div>
-          <div class="bc-title">Humanoiden</div>
-          <div class="bc-sub">Aus Biosphären folgen Technosphären</div>
-          <div class="bc-desc">Signal, Kontrolle und die Zukunft der Kommunikation zwischen Mensch und Maschine. Robotik, Schwärme, KI-zu-KI-Protokolle. Losgelöst von der Axiomatica-Beweiskette — aus ihr heraus entstanden.</div>
-          <span class="bc-status st-plan">Februar 2027</span>
-        </div>
-        <div class="book-card wip">
-          <div class="bc-label">Ausblick</div>
-          <div class="bc-title">SETI 2030</div>
-          <div class="bc-sub">Die Suche nach dem Signal</div>
-          <div class="bc-desc">Gap Seed als universelles Kommunikationsprotokoll. SKA Phase 1 als erstes Instrument mit ausreichender Sensitivität. Was wir senden würden — und wie wir erkennen würden ob jemand antwortet.</div>
-          <span class="bc-status st-plan">Ausblick · 2030</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- PAPERS -->
-  <div id="papers">
-    <div class="series-header">
-      <div class="series-title">Wissenschaftliche Papers</div>
-      <div class="series-label">Open Access · Zenodo · CC BY 4.0</div>
-    </div>
-
-    <div class="two-col">
-      <div>
-        <ul class="papers-list">
-          <li>
-            <span class="paper-id">2026a–d</span>
-            <span class="paper-title">Kosmologische Reihe — Shannon-Entropie, fraktale Komplexität, Void-Strukturen, ΛCDM-Vorhersagen</span>
-            <a href="https://doi.org/10.5281/zenodo.20286331" class="paper-doi" target="_blank">doi</a>
-          </li>
-          <li>
-            <span class="paper-id">2026f</span>
-            <span class="paper-title"><strong>Axiomatica Universalis</strong> — Die universelle Sprache der Bedeutung. Hauptpaper.</span>
-            <a href="https://doi.org/10.5281/zenodo.20455855" class="paper-doi" target="_blank">doi:10.5281/zenodo.20455855</a>
-          </li>
-          <li>
-            <span class="paper-id">2026g</span>
-            <span class="paper-title">Beyer 2026g — Formale Axiome und Beweisskizzen</span>
-            <a href="#" class="paper-doi">pending</a>
-          </li>
-          <li>
-            <span class="paper-id">2026h–x</span>
-            <span class="paper-title">Empirische Reihe — Quantencomputer, Biosphäre, Hydrologie, Ästhetik, SETI, Kosmologie</span>
-            <a href="#" class="paper-doi">pending</a>
-          </li>
-          <li>
-            <span class="paper-id">2026ad</span>
-            <span class="paper-title">Log-Doob-Weg und Lokales MDL-Konzentrationstheorem — Reviewer-Kette Mistral Vibe · ChatGPT · Gemini</span>
-            <a href="#" class="paper-doi">pending</a>
-          </li>
-        </ul>
-
-        <div class="zenodo-block" style="margin-top:1.5rem;" id="open-access">
-          <div class="zenodo-title">Open Access Policy</div>
-          <div class="zenodo-text">
-            Alle wissenschaftlichen Papers erscheinen unter CC BY 4.0 auf Zenodo.
-            Die Theorie ist gemeinfrei — die Anwendungen sind patentiert.<br><br>
-            Zenodo-DOI des Hauptpapers: <strong>doi:10.5281/zenodo.20455855</strong><br>
-            GitHub: <strong>github.com/Yavanno/verlag-von-bedeutung</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-block" id="ueber">
-        <div class="about-title">Über den Verlag</div>
-        <div class="about-text">
-          <p style="margin-bottom:0.8rem;">Verlag von Bedeutung ist ein unabhängiger Wissenschaftsverlag mit Sitz in Zürich. Gegründet 2026 für die Publikation der Axiomatica Universalis Serie.</p>
-          <p style="margin-bottom:0.8rem;">Der Verlag publiziert an der Grenze zwischen formaler Mathematik, Informationstheorie und Wissenschaftsphilosophie. Alle wissenschaftlichen Inhalte erscheinen Open Access.</p>
-          <p style="margin-bottom:0.8rem;"><strong>Karlo Beyer</strong> — Autor und Gründer. Zürich.</p>
-          <p style="margin-bottom:0.8rem;">Bücher: Tredition GmbH, Hamburg · Draft2Digital.<br>Papers: Zenodo (CERN), CC BY 4.0.</p>
-          <p style="font-size:12px;color:var(--ink3);font-style:italic;">Mitarbeit: Claude (Anthropic) · Gemini (Google) · Mistral Vibe (Mistral AI) · ChatGPT (OpenAI)</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- KONTAKT -->
-  <div id="kontakt" style="text-align:center;padding:2rem 0;">
-    <div style="font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:0.5rem;">Kontakt</div>
-    <div style="font-size:14px;color:var(--ink3);margin-bottom:0.3rem;">Verlag von Bedeutung · Zürich</div>
-    <div style="font-size:15px;color:var(--blue);">verlag-von-bedeutung@mailbox.org</div>
-    <div style="font-size:13px;color:var(--ink3);margin-top:1rem;">Manuskripte · Kooperationen · Presse</div>
-  </div>
-
-</div><!-- /container -->
-
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-col-title">Verlag von Bedeutung</div>
-      <div class="footer-text">
-        Unabhängiger Wissenschaftsverlag<br>
-        Zürich · Schweiz · 2026<br>
-        <a href="mailto:verlag-von-bedeutung@mailbox.org">verlag-von-bedeutung@mailbox.org</a>
-      </div>
+      <div class="col-titel">Über den Verlag</div>
+      <p class="col-text">Gegründet 2026 in Zürich. Denkt an der Grenze des Beschreibbaren. Publiziert den Raum für Bedeutung.</p>
+      <p class="col-text" style="font-style:italic;">Eine Symbiose.</p>
+      <p class="col-text" style="margin-top:0.5rem;">E-Books DE: tredition<br>E-Books EN: Draft2Digital<br>Print DE Sammleredition I + III: tredition</p>
     </div>
     <div>
-      <div class="footer-col-title">Axiomatica Universalis</div>
-      <div class="footer-text">
-        β* = D/(D+1)<br>
-        33 Domains · 17 Grössenordnungen<br>
-        
-        Theorie: CC BY 4.0
-      </div>
-    </div>
-    <div>
-      <div class="footer-col-title">Links</div>
-      <div class="footer-text">
-        <a href="https://doi.org/10.5281/zenodo.20455855">Hauptpaper (Zenodo)</a><br>
-        <a href="https://shop.tredition.com/search/cG9ldGljYSB1bml2ZXJzYWxpcw==">Tredition (Bücher)</a><br>
-        <a href="#">Draft2Digital (Bücher)</a><br>
-        <a href="https://github.com/Yavanno/verlag-von-bedeutung">GitHub</a>
-      </div>
+      <div class="col-titel">Wissenschaftliche Papers · Open Access</div>
+      <p class="col-text">Vollständige Publikationsliste: zenodo.org</p>
+      <div class="col-doi">doi:10.5281/zenodo.20455855<br>„Die universelle Sprache der Bedeutung"<br><br>Papers: Zenodo (CERN) · CC BY 4.0<br>Alle wissenschaftlichen Inhalte: Open Access</div>
     </div>
   </div>
-  <div class="footer-copy">
-    © 2026 Karlo Beyer · Verlag von Bedeutung · Zürich ·
-    Wissenschaftliche Inhalte: CC BY 4.0 ·
-    Design: Claude Sonnet 4.6
-  </div>
-</footer>
 
+  <div class="qr-area">
+    <div class="qr-link"><a href="https://symbiontart.github.io/verlag-von-bedeutung/">symbiontart.github.io/verlag-von-bedeutung/</a></div>
+  </div>
+
+  <div class="symbiose-bar">
+    <div class="symbiose-text">Geschrieben in Symbiose zwischen menschlicher Intuition und digitaler Sprachverarbeitung.</div>
+    <div class="symbiose-text">Bedeutung entsteht im Spektrum dazwischen.</div>
+    <div class="symbiose-sub">Karlo Beyer in Kooperation mit Claude Sonnet · Mistral Vibe · ChatGPT · Gemini</div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-name">Verlag von Bedeutung</div>
+    <div class="footer-adresse">Unabhängiger Wissenschaftsverlag · Zürich · Schweiz · 2026</div>
+    <div class="footer-formel">β* = D/(D+1)</div>
+    <div class="footer-meta">33 Domains · 17 Grössenordnungen · Theorie: CC BY 4.0</div>
+    <div class="footer-mail">verlag-von-bedeutung@mailbox.org</div>
+    <div class="footer-copy">© 2026 Karlo Beyer · Verlag von Bedeutung · Zürich</div>
+  </div>
+
+</div>
 </body>
 </html>
